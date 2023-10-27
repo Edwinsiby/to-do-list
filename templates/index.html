@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <ul>
+        {{range .}}
+            <li>{{.Text}} <a href="/delete/{{.ID}}">(Delete)</a></li>
+        {{end}}
+    </ul>
+    <form action="/add" method="POST">
+        <input type="text" name="text" required>
+        <input type="submit" value="Add Task">
+    </form>
+</body>
+</html>
